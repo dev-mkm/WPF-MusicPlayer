@@ -1,0 +1,50 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        x:Class="Atena.MainWindow"
+        mc:Ignorable="d" Height="450" Width="800"
+     TextElement.Foreground="{DynamicResource MaterialDesignDarkForeground}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignDarkBackground}"
+     FontFamily="{DynamicResource MaterialDesignFont}" MinWidth="800" MinHeight="450" MaxHeight="450" MaxWidth="800" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" WindowStyle="None" AllowsTransparency="True" Title="Music Player" Icon="/821cc87da06e215b4509ccf4f9063ec4.png" ResizeMode="CanMinimize">
+    <Grid x:Name="MediaPlay" HorizontalAlignment="Center" VerticalAlignment="Center" Width="800" Height="450" PreviewKeyDown="Grid_PreviewKeyDown">
+        <Slider x:Name="sliderSeek" Style="{DynamicResource MaterialDesignSlider}" HorizontalAlignment="Center" Height="20" Margin="0,366,0,0" VerticalAlignment="Top" Width="800" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#b772e8" ValueChanged="musicMoved"/>
+        <Button x:Name="Pre" Style="{DynamicResource MaterialDesignIconButton}" HorizontalAlignment="Left" Margin="30,397,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="40" Height="40" Foreground="#b772e8" FontFamily="Cascadia Code SemiBold" FontSize="24" BorderBrush="{x:Null}" Opacity="0.8" Click="Pre_Click">
+            <materialDesign:PackIcon Width="30"
+                                       Height="30"
+                                       Kind="SkipPrevious" VerticalAlignment="Center" />
+        </Button>
+        <Button x:Name="Play" Style="{DynamicResource MaterialDesignIconButton}" HorizontalAlignment="Left" Margin="70,390,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="55" Height="55" Foreground="#b772e8" FontFamily="Cascadia Code SemiBold" FontSize="24" BorderBrush="{x:Null}" Opacity="0.8" Click="Play_Click">
+            <materialDesign:PackIcon x:Name="PlayIcon" Width="50"
+                                       Height="50"
+                                       Kind="Play" VerticalAlignment="Center" />
+        </Button>
+        <Button x:Name="Next" Style="{DynamicResource MaterialDesignIconButton}" HorizontalAlignment="Left" Margin="125,397,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="40" Height="40" Foreground="#b772e8" FontFamily="Cascadia Code SemiBold" FontSize="24" BorderBrush="{x:Null}" Opacity="0.8" Click="Next_Click">
+            <materialDesign:PackIcon Width="30"
+                                       Height="30"
+                                       Kind="SkipNext" VerticalAlignment="Center" />
+        </Button>
+        <Button x:Name="Shuffle" Style="{DynamicResource MaterialDesignIconButton}" HorizontalAlignment="Left" Margin="185,397,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="40" Height="40" Foreground="#b772e8" FontFamily="Cascadia Code SemiBold" FontSize="24" BorderBrush="{x:Null}" Opacity="0.8" Click="Shuffle_Click">
+            <materialDesign:PackIcon x:Name="ShuffleIcon" Width="30"
+                                       Height="30"
+                                       Kind="ShuffleDisabled" VerticalAlignment="Center" />
+        </Button>
+        <Slider x:Name="slide" Style="{DynamicResource MaterialDesignSlider}" Width="120" Height="20" Margin="670,401,10,29" Foreground="#dcc2ee" ValueChanged="sliderSeek_MouseLeftButtonUp"/>
+        <Button x:Name="Close" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left" Margin="730,0,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="70" Height="30" Foreground="#ff695d" BorderBrush="{x:Null}" Click="close">
+            <materialDesign:PackIcon Width="30"
+                                       Height="30"
+                                       Kind="Close" VerticalAlignment="Center" />
+        </Button>
+        <Button x:Name="Open" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="180" Height="55" Foreground="#b57edc" FontFamily="Cascadia Mono" FontSize="22" BorderBrush="{x:Null}" Opacity="0.8" Click="open" Content="Open Folder"/>
+        <TextBlock Style="{DynamicResource MaterialDesignTextBlock}" HorizontalAlignment="Left" Margin="10,254,0,0" TextWrapping="Wrap" Text="Currently Playing:" Foreground="#dcc2ee" FontFamily="Cascadia Mono" FontSize="20" VerticalAlignment="Top" Height="32"/>
+        <TextBlock x:Name="Title" Style="{DynamicResource MaterialDesignTextBlock}" HorizontalAlignment="Left" Margin="10,284,0,0" TextWrapping="Wrap" Text="Please Choose a Music to Start" Foreground="#b772e8" FontFamily="Cascadia Mono" FontSize="32" VerticalAlignment="Top" Width="780" Height="45"/>
+        <TextBlock x:Name="Author" Style="{DynamicResource MaterialDesignTextBlock}" HorizontalAlignment="Left" Margin="10,329,0,0" TextWrapping="Wrap" Text="" Foreground="#9648cd" FontFamily="Cascadia Mono" FontSize="20" VerticalAlignment="Top" Height="32"/>
+        <Image x:Name="Image" HorizontalAlignment="Left" Height="209" Margin="572,65,0,0" VerticalAlignment="Top" Width="209"/>
+    </Grid>
+</Window>
